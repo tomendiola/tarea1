@@ -23,6 +23,7 @@ public class Actividad5 extends JFrame {
     private final JTextArea textArea2;
     private final JButton boton1;
     private final JButton boton2;
+    private final JButton boton3;
 
     private class Operacion implements ActionListener {
 
@@ -51,6 +52,21 @@ public class Actividad5 extends JFrame {
         }
     }
 
+    private class Operacion3 implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Topicos objTopico =new Topicos();
+     //       objTopico.mostar();
+            
+            textArea1.setText(objTopico.mostar());
+//
+//          es lo mismo   
+//          cadena= "texto"+ textfiled.getText();
+            //          JOptionPane.showMessageDialog(null, cadena);
+        }
+    }
+
     
     public Actividad5() {
         super("Prueba Actividad 1 ");
@@ -61,13 +77,17 @@ public class Actividad5 extends JFrame {
 
         boton1 = new JButton("Encripta");
         boton2 = new JButton("Decifra");
+        boton3 = new JButton("Mostrar archivo");
         add(boton1);
         add(boton2);
+        add(boton3);
         add(textArea2);
         Operacion objOperacion =new Operacion();
         boton1.addActionListener(objOperacion);
         Operacion2 objOperacion2 =new Operacion2();
         boton2.addActionListener(objOperacion2);
+        Operacion3 objOperacion3 =new Operacion3();
+        boton3.addActionListener(objOperacion3);
     }
 
     public static void main(String[] args) {
